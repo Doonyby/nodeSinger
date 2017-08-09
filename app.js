@@ -6,7 +6,8 @@ var morgan = require('morgan');
 
 // ------ Middle-ware ------- //
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/views'))
+app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/views'));
 
 
 
@@ -15,20 +16,20 @@ app.get('/', function(req, res) {
   res.render('pages/00-index.ejs');
 });
 
-app.get('/ah', function(req, res) {
-  res.render('pages/01-ayu.ejs');
+app.get('/ms', function(req, res) {
+  res.render('pages/01-ms.ejs');
 });
 
-app.get('/mc', function(req, res) {
-  res.render('pages/02-madc.ejs');
+app.get('/pb', function(req, res) {
+  res.render('pages/02-pb.ejs');
 });
 
-app.get('/bp', function(req, res) {
-  res.render('pages/03-bpink.ejs');
+app.get('/qsa', function(req, res) {
+  res.render('pages/03-qsa.ejs');
 });
 
-app.get('/ty', function(req, res) {
-  res.render('pages/04-taeyang.ejs');
+app.get('/cwk', function(req, res) {
+  res.render('pages/04-cwk.ejs');
 });
 
 // ------- Listening Server ------- //
@@ -36,5 +37,5 @@ app.listen(3000, function(err) {
   if(err) {
     throw err;
   }
-  console.log('Here is the port listening on 3000');
+  console.log('Server listening on port 3000');
 });
